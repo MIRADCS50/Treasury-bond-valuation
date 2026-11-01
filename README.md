@@ -31,9 +31,9 @@ Key components include:
 
 For a fixed-rate bond with face value \(M\), periodic coupon payment \(C\), \(N\) remaining payment periods, and nominal annual yield \(y\) compounded \(m\) times per year:
 
-\[
+$$
 P=\sum_{t=1}^{N}\frac{CF_t}{(1+y/m)^t}
-\]
+$$
 
 where:
 
