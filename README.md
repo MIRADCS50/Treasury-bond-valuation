@@ -46,9 +46,9 @@ For this project, \(m=2\), representing semiannual coupon payments.
 
 The implied YTM is obtained numerically by solving:
 
-\[
+$$
 P(y)-P_{\text{auction}}=0
-\]
+$$
 
 using the Brent root-finding algorithm.
 
@@ -56,25 +56,23 @@ using the Brent root-finding algorithm.
 
 **Macaulay Duration** measures the present-value-weighted average time to receive a bond's cash flows:
 
-\[
-D_{\text{Mac}}=
+$$D_{\text{Mac}}=
 \frac{\sum_{t=1}^{N}\frac{t}{m}PV(CF_t)}
 {P}
-\]
+$$
 
 **Modified Duration** measures the approximate percentage price sensitivity to a change in annual yield:
 
-\[
+$$
 D_{\text{Mod}}=
 \frac{D_{\text{Mac}}}{1+y/m}
-\]
-
+$$
 For a relatively small yield change:
 
-\[
+$$
 \frac{\Delta P}{P}
 \approx -D_{\text{Mod}}\Delta y
-\]
+$$
 
 ### 3. Convexity
 
@@ -82,24 +80,24 @@ Convexity captures the curvature of the bond price-yield relationship and improv
 
 For regular coupon periods and nominal annual yield compounded \(m\) times per year:
 
-\[
+$$
 C_{\text{Bond}}=
 \frac{1}{P m^2}
 \sum_{t=1}^{N}
 \frac{CF_t\,t(t+1)}
 {(1+y/m)^{t+2}}
-\]
+$$
 
 ### 4. Taylor Series Approximation
 
 The second-order approximation combines Modified Duration and Convexity:
 
-\[
+$$
 \frac{\Delta P}{P}
 \approx
 -D_{\text{Mod}}\Delta y
 +\frac{1}{2}C_{\text{Bond}}(\Delta y)^2
-\]
+$$
 
 The project evaluates both approximations against exact repricing to quantify their estimation errors.
 
